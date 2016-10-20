@@ -1,0 +1,32 @@
+{
+  "google_atom_RestServiceVirtualController-invoke" : {
+    "id" : "google_atom_RestServiceVirtualController-invoke",
+    "service" : "google",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : "google_atom.RootResponse",
+    "type" : "google_atom.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/google_atom/invoke/feed/atom",
+      "directPath" : "https://mail.google.com/mail/feed/atom",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "wm_auth_username",
+        "parameterType" : "auth",
+        "type" : null
+      }, {
+        "name" : "wm_auth_password",
+        "parameterType" : "auth",
+        "type" : null
+      } ],
+      "produces" : null,
+      "consumes" : [ "text/xml" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

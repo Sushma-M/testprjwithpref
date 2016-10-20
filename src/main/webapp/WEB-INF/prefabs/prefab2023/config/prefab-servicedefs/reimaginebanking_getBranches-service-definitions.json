@@ -1,0 +1,28 @@
+{
+  "reimaginebanking_getBranches_RestServiceVirtualController-invoke" : {
+    "id" : "reimaginebanking_getBranches_RestServiceVirtualController-invoke",
+    "service" : "reimaginebanking",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : "array",
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/reimaginebanking_getBranches/invoke/branches",
+      "directPath" : "http://api.reimaginebanking.com/branches",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "key",
+        "parameterType" : "query",
+        "type" : "String"
+      } ],
+      "produces" : null,
+      "consumes" : [ "text/xml" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

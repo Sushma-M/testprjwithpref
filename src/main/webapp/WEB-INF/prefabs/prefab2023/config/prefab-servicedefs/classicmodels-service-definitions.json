@@ -1,0 +1,66 @@
+{
+  "ProcedureExecutionController_executeGetFIrstname" : {
+    "id" : "ProcedureExecutionController_executeGetFIrstname",
+    "service" : "classicmodels",
+    "controller" : "ProcedureExecutionController",
+    "operationType" : "array",
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "executeGetFIrstname",
+      "methodType" : "get",
+      "relativePath" : "/classicmodels/procedureExecutor/procedure/execute/getFIrstname",
+      "directPath" : "/classicmodels/procedureExecutor/procedure/execute/getFIrstname",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "lastname",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      } ],
+      "produces" : [ ],
+      "consumes" : [ ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  },
+  "QueryExecutionController_executeGetCustomer" : {
+    "id" : "QueryExecutionController_executeGetCustomer",
+    "service" : "classicmodels",
+    "controller" : "QueryExecutionController",
+    "operationType" : "org.springframework.data.domain.Page",
+    "type" : "org.springframework.data.domain.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "executeGetCustomer",
+      "methodType" : "get",
+      "relativePath" : "/classicmodels/queryExecutor/queries/getCustomer",
+      "directPath" : "/classicmodels/queryExecutor/queries/getCustomer",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "customerNumber",
+        "parameterType" : "query",
+        "type" : "java.lang.Integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "String"
+      } ],
+      "produces" : [ ],
+      "consumes" : [ ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

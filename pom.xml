@@ -11,6 +11,13 @@
                 <filtering>true</filtering>
                 <directory>src/main/resources</directory>
             </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/securityService/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
         </resources>
         <finalName>testprjwithpref</finalName>
         <filters>
@@ -78,7 +85,9 @@
                             <goal>add-source</goal>
                         </goals>
                         <configuration>
-                            <sources/>
+                            <sources>
+                                <source>services/securityService/src</source>
+                            </sources>
                         </configuration>
                     </execution>
                 </executions>

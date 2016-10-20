@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.prefab2023.classicmodels_ext.controller,com.prefab2023.classicmodels_ext.service,com.prefab2023.classicmodels_ext.dao"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:classicmodels_ext.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+    <bean id="classicmodels_extWMManagedDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" depends-on="systemPropertyInitializer" lazy-init="true"
+          p:driverClass="${classicmodels_ext.driverClass}"
+          p:jdbcUrl="${classicmodels_ext.url}"
+          p:user="${classicmodels_ext.username}"
+          p:password="${classicmodels_ext.password}"
+          p:maxPoolSize="4"
+          p:minPoolSize="2"
+          p:maxIdleTime="600"
+          p:maxStatements="50"
+          p:maxStatementsPerConnection="20"
+          p:checkoutTimeout="30000"
+          p:idleConnectionTestPeriod="300"
+          p:unreturnedConnectionTimeout="300"
+          p:debugUnreturnedConnectionStackTraces="true"
+          p:acquireRetryAttempts="3"
+          p:acquireRetryDelay="1000"
+          p:contextClassLoaderSource="library"
+          p:privilegeSpawnedThreads="true"
+            />
+
+    <bean id="classicmodels_extEntityInterceptor" class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor"/>
+
+    <bean id="classicmodels_extSessionFactory" class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean">
+        <property name="dataSource" ref="classicmodels_extDataSource"/>
+        <property name="packagesToScan" value="com.prefab2023.classicmodels_ext"/>
+        <property name="entityInterceptor" ref="classicmodels_extEntityInterceptor"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                classicmodels_ext-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+
+        <property name="customTypes">
+            <array value-type="com.wavemaker.runtime.data.CustomType">
+                <ref bean="dateTimeCustomType"/>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                ${classicmodels_ext.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                ${classicmodels_ext.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+                <prop key="hibernate.schema_update.unique_constraint_strategy">
+                    skip
+                </prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="classicmodels_extTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="classicmodels_extSessionFactory"/>
+    </bean>
+    <bean id="classicmodels_extTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="classicmodels_extSessionFactory"/>
+    </bean>
+    <bean id="classicmodels_extWMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
+        <property name="template" ref="classicmodels_extTemplate"/>
+    </bean>
+    <bean id="classicmodels_extWMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
+        <property name="template" ref="classicmodels_extTemplate"/>
+        <property name="serviceId" value="classicmodels_ext" />
+    </bean>
+
+    <bean id="persistentLocalDateTimeType" class="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime"/>
+    <bean id="dateTimeCustomType" class="com.wavemaker.runtime.data.CustomType">
+        <property name="type" ref="persistentLocalDateTimeType"/>
+        <property name="keys">
+            <list>
+                <value>DateTime</value>
+                <value>org.joda.time.LocalDateTime</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="classicmodels_extPageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${classicmodels_ext.maxPageSize}"/>
+        <property name="fallbackPageable">
+            <bean  class="org.springframework.data.domain.PageRequest">
+                <constructor-arg  value="0"/>
+                <constructor-arg  value="20"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="classicmodels_extDataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
+        <property name="dataSourceType" value="${classicmodels_ext.dataSourceType}"/>
+        <property name="jndiName" value="${classicmodels_ext.jndiName}"/>
+        <property name="serviceId" value="classicmodels_ext"/>
+    </bean>
+
+
+    <tx:annotation-driven/>
+
+</beans>
+

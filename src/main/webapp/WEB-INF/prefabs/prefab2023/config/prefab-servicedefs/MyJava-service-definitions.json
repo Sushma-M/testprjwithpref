@@ -1,0 +1,63 @@
+{
+  "MyJavaController_returnObj" : null,
+  "MyJavaController_concatString" : {
+    "id" : "MyJavaController_concatString",
+    "service" : "MyJava",
+    "controller" : "MyJavaController",
+    "operationType" : "string",
+    "type" : "string",
+    "wmServiceOperationInfo" : {
+      "name" : "concatString",
+      "methodType" : "get",
+      "relativePath" : "/myJava/concatString",
+      "directPath" : "/myJava/concatString",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "str1",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      }, {
+        "name" : "str2",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      } ],
+      "produces" : [ "application/json" ],
+      "consumes" : null,
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  },
+  "MyJavaController_concatString2" : {
+    "id" : "MyJavaController_concatString2",
+    "service" : "MyJava",
+    "controller" : "MyJavaController",
+    "operationType" : "string",
+    "type" : "string",
+    "wmServiceOperationInfo" : {
+      "name" : "concatString2",
+      "methodType" : "get",
+      "relativePath" : "/myJava/concatString2",
+      "directPath" : "/myJava/concatString2",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "str1",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      }, {
+        "name" : "str2",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      } ],
+      "produces" : [ "application/json" ],
+      "consumes" : null,
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "/mail",
+  "paths" : {
+    "/feed/atom" : {
+      "x-WM-BASE_PATH" : "/feed/atom",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "google_atom_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "https://mail.google.com/mail/feed/atom"
+    }
+  },
+  "host" : "mail.google.com",
+  "schemes" : [ "https" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "google_atom.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "fullcount" : {
+          "type" : "string"
+        },
+        "link" : {
+          "$ref" : "#/definitions/link"
+        },
+        "xmlns" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "modified" : {
+          "type" : "string"
+        },
+        "tagline" : {
+          "type" : "string"
+        }
+      }
+    },
+    "link" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "google_atom.link",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "rel" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "e77e3f92-86cd-45aa-8b44-95496cd25414",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "google",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

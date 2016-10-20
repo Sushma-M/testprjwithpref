@@ -1,0 +1,40 @@
+{
+  "name" : "classicmodels",
+  "description" : "Procedure for classicmodels",
+  "procedures" : [ {
+    "name" : "getFIrstname",
+    "procedure" : "call getNull(:lastname,:firstname)",
+    "comment" : "get",
+    "description" : null,
+    "outputType" : null,
+    "returnsSingleResult" : false,
+    "procedureParams" : [ {
+      "paramName" : "lastname",
+      "procedureParamType" : "IN",
+      "valueType" : "java.lang.String",
+      "testValue" : "Murphy",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    }, {
+      "paramName" : "firstname",
+      "procedureParamType" : "OUT",
+      "valueType" : "java.lang.String",
+      "testValue" : "",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "returnTypeMetadata" : [ {
+      "element" : [ {
+        "name" : "firstname",
+        "subType" : null,
+        "typeRef" : "java.lang.String",
+        "isList" : false,
+        "allowNull" : null
+      } ],
+      "javaType" : "classicmodelsgetFIrstnamertnType",
+      "name" : "classicmodelsgetFIrstnamertnType"
+    } ]
+  } ]
+}

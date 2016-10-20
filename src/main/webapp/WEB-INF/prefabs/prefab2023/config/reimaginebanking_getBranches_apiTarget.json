@@ -1,0 +1,147 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "",
+  "paths" : {
+    "/branches" : {
+      "x-WM-BASE_PATH" : "/branches",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "parameters" : [ {
+          "description" : "key",
+          "name" : "key",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-IS_LIST" : true,
+              "items" : {
+                "$ref" : "#/definitions/RootResponseROOTEntryItem"
+              },
+              "uniqueItems" : false,
+              "type" : "array"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "reimaginebanking_getBranches_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "http://api.reimaginebanking.com/branches"
+    }
+  },
+  "host" : "api.reimaginebanking.com",
+  "schemes" : [ "http" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "geocode" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_getBranches.geocode",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "lng" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "lat" : {
+          "format" : "double",
+          "type" : "number"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_getBranches.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "RootResponseROOT" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/RootResponseROOTEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      }
+    },
+    "RootResponseROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_getBranches.RootResponseROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "geocode" : {
+          "$ref" : "#/definitions/geocode"
+        },
+        "phone_number" : {
+          "type" : "string"
+        },
+        "_id" : {
+          "type" : "string"
+        },
+        "address" : {
+          "$ref" : "#/definitions/address"
+        },
+        "hours" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "notes" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      }
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_getBranches.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "address" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_getBranches.address",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "zip" : {
+          "type" : "string"
+        },
+        "street_name" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "street_number" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "84f9fad6-0468-4b6b-bef3-e54bd7c5ae1d",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

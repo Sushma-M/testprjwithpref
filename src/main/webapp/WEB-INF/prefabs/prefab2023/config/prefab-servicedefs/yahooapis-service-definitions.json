@@ -1,0 +1,36 @@
+{
+  "yahooapis_RestServiceVirtualController-invoke" : {
+    "id" : "yahooapis_RestServiceVirtualController-invoke",
+    "service" : "yahooapis",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : "yahooapis.RootResponse",
+    "type" : "yahooapis.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/yahooapis/invoke/public/yql",
+      "directPath" : "https://query.yahooapis.com/v1/public/yql",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "env",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "diagnostics",
+        "parameterType" : "query",
+        "type" : "String"
+      } ],
+      "produces" : null,
+      "consumes" : [ "text/xml" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : false,
+        "mobile" : false
+      }
+    }
+  }
+}

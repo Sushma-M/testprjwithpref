@@ -1,0 +1,28 @@
+{
+  "BLZServiceController_getBank" : {
+    "id" : "BLZServiceController_getBank",
+    "service" : "BLZService",
+    "controller" : "BLZServiceController",
+    "operationType" : "com.prefab2023.services.blzservice.GetBankResponseType",
+    "type" : "com.prefab2023.services.blzservice.GetBankResponseType",
+    "wmServiceOperationInfo" : {
+      "name" : "getBank",
+      "methodType" : "get",
+      "relativePath" : "/bLZ/bank",
+      "directPath" : "/bLZ/bank",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "blz",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      } ],
+      "produces" : [ "application/xml", "application/json" ],
+      "consumes" : null,
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

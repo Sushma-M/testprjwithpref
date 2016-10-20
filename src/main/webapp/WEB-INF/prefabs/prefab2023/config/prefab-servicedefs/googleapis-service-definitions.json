@@ -1,0 +1,36 @@
+{
+  "googleapis_RestServiceVirtualController-invoke" : {
+    "id" : "googleapis_RestServiceVirtualController-invoke",
+    "service" : "googleapis",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : "googleapis.RootResponse",
+    "type" : "googleapis.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/googleapis/invoke/api/directions/xml",
+      "directPath" : "http://maps.googleapis.com/maps/api/directions/xml",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "sensor",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "origin",
+        "parameterType" : "query",
+        "type" : "String"
+      }, {
+        "name" : "destination",
+        "parameterType" : "query",
+        "type" : "String"
+      } ],
+      "produces" : null,
+      "consumes" : [ "text/xml" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

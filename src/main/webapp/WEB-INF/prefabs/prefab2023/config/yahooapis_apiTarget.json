@@ -1,0 +1,133 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "/v1",
+  "paths" : {
+    "/public/yql" : {
+      "x-WM-BASE_PATH" : "/public/yql",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "parameters" : [ {
+          "description" : "q",
+          "name" : "q",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "env",
+          "name" : "env",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "diagnostics",
+          "name" : "diagnostics",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "yahooapis_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "https://query.yahooapis.com/v1/public/yql"
+    }
+  },
+  "host" : "query.yahooapis.com",
+  "schemes" : [ "https" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "yahoo:count" : {
+          "type" : "string"
+        },
+        "yahoo:created" : {
+          "type" : "string"
+        },
+        "results" : {
+          "$ref" : "#/definitions/results"
+        },
+        "yahoo:lang" : {
+          "type" : "string"
+        },
+        "xmlns:yahoo" : {
+          "type" : "string"
+        }
+      }
+    },
+    "results" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "quote" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/quoteEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      }
+    },
+    "quoteEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.quoteEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "Low" : {
+          "type" : "string"
+        },
+        "Open" : {
+          "type" : "string"
+        },
+        "Adj_Close" : {
+          "type" : "string"
+        },
+        "Close" : {
+          "type" : "string"
+        },
+        "Date" : {
+          "type" : "string"
+        },
+        "Symbol" : {
+          "type" : "string"
+        },
+        "Volume" : {
+          "type" : "string"
+        },
+        "High" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "a9692961-45bb-4a73-b164-ce86d967f56e",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "yahooapis",
+    "x-WM-USE_PROXY_FOR_MOBILE" : false,
+    "version" : "2.0"
+  }
+}

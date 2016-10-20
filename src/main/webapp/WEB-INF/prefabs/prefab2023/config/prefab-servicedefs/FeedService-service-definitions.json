@@ -1,0 +1,40 @@
+{
+  "FeedServiceController_getFeedWithHttpConfig" : {
+    "id" : "FeedServiceController_getFeedWithHttpConfig",
+    "service" : "FeedService",
+    "controller" : "FeedServiceController",
+    "operationType" : "com.wavemaker.runtime.feed.model.Feed",
+    "type" : "com.wavemaker.runtime.feed.model.Feed",
+    "wmServiceOperationInfo" : {
+      "name" : "getFeedWithHttpConfig",
+      "methodType" : "get",
+      "relativePath" : "/feed/auth",
+      "directPath" : "/feed/auth",
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "feedURL",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      }, {
+        "name" : "httpBasicAuthUsername",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      }, {
+        "name" : "httpBasicAuthPassword",
+        "parameterType" : "query",
+        "type" : "java.lang.String"
+      }, {
+        "name" : "connectionTimeout",
+        "parameterType" : "query",
+        "type" : "int"
+      } ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}

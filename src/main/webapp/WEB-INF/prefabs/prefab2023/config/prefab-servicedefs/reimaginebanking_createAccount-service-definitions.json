@@ -1,0 +1,32 @@
+{
+  "reimaginebanking_createAccount_RestServiceVirtualController-invoke" : {
+    "id" : "reimaginebanking_createAccount_RestServiceVirtualController-invoke",
+    "service" : "reimaginebanking",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : "reimaginebanking_createAccount.RootResponse",
+    "type" : "reimaginebanking_createAccount.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "post",
+      "relativePath" : "/reimaginebanking_createAccount/invoke/56c66be5a73e492741507362/accounts",
+      "directPath" : "http://api.reimaginebanking.com/customers/56c66be5a73e492741507362/accounts",
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "RequestBody",
+        "parameterType" : "body",
+        "type" : "java.lang.Object"
+      }, {
+        "name" : "key",
+        "parameterType" : "query",
+        "type" : "String"
+      } ],
+      "produces" : null,
+      "consumes" : [ "application/json" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}
